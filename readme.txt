@@ -1,9 +1,9 @@
 === Hitslink ===
-Contributors: Denis-de-Bernardy
+Contributors: Denis-de-Bernardy, Mike_Koepke
 Donate link: http://www.semiologic.com/partners/
 Tags: hitslink, stats, semiologic
 Requires at least: 2.8
-Tested up to: 3.2.1
+Tested up to: 3.5.1
 Stable tag: trunk
 
 Automatically enables thickbox on thumbnail images (i.e. opens the images in a fancy pop-up).
@@ -43,10 +43,14 @@ It could be argued that Google knows your stats anyway if you're delivering AdSe
 == Installation ==
 
 1. Upload the plugin folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the 'Plugins' menu in WordPress
 
 
 == Change Log ==
+
+= 2.0.3 =
+
+- WP 3.5 compat
 
 = 2.0.2 =
 
