@@ -1,8 +1,5 @@
 <?php
 /*
-<<<<<<< HEAD
-Version: 1.0.1
-=======
 Plugin Name: HitsLink
 Plugin URI: http://www.semiologic.com/software/hitslink/
 Description: Adds <a href="http://go.semiologic.com/hitslink">HitsLink</a> tracking to your site.
@@ -11,13 +8,8 @@ Author: Denis de Bernardy, Mike_Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: hitslink
 Domain Path: /lang
->>>>>>> orig-code
 */
-// obsolete file
 
-<<<<<<< HEAD
-$active_plugins = get_option('active_plugins');
-=======
 /*
 Terms of use
 ------------
@@ -102,28 +94,15 @@ class hitslink {
 			);
 	} # admin_menu()
 } # hitslink()
->>>>>>> orig-code
 
-if ( !is_array($active_plugins) )
-{
-	$active_plugins = array();
+
+function hitslink_admin() {
+	include_once dirname(__FILE__) . '/hitslink-admin.php';
 }
 
-foreach ( (array) $active_plugins as $key => $plugin )
-{
-	if ( $plugin == 'hitslink.php' )
-	{
-		unset($active_plugins[$key]);
-		break;
-	}
-}
+add_action('load-settings_page_hitslink', 'hitslink_admin');
 
-if ( !in_array('hitslink/hitslink.php', $active_plugins) )
-{
-	$active_plugins[] = 'hitslink/hitslink.php';
-}
 
-sort($active_plugins);
-
-update_option('active_plugins', $active_plugins);
+add_action('wp_head', array('hitslink', 'header_scripts'), 9);
+add_action('admin_menu', array('hitslink', 'admin_menu'));
 ?>
