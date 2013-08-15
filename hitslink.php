@@ -3,7 +3,7 @@
 Plugin Name: HitsLink
 Plugin URI: http://www.semiologic.com/software/hitslink/
 Description: Adds <a href="http://go.semiologic.com/hitslink">HitsLink</a> tracking to your site.
-Version: 2.0.3
+Version: 2.1
 Author: Denis de Bernardy, Mike_Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: hitslink
@@ -30,7 +30,17 @@ load_plugin_textdomain('hitslink', false, dirname(plugin_basename(__FILE__)) . '
  **/
 
 class hitslink {
-	/**
+    /**
+     * hitslink()
+     *
+     */
+    function hitslink() {
+        add_action('wp_head', array($this, 'header_scripts'), 9);
+        add_action('admin_menu', array($this, 'admin_menu'));
+
+    }
+
+    /**
 	 * header_scripts()
 	 *
 	 * @return void
@@ -59,7 +69,7 @@ class hitslink {
 	 * @return string
 	 **/
 	
-	static function get_options() {
+    static function get_options() {
 		$o = get_option('hitslink');
 		
 		if ( $o === false ) {
@@ -102,7 +112,4 @@ function hitslink_admin() {
 
 add_action('load-settings_page_hitslink', 'hitslink_admin');
 
-
-add_action('wp_head', array('hitslink', 'header_scripts'), 9);
-add_action('admin_menu', array('hitslink', 'admin_menu'));
 ?>

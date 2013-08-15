@@ -6,7 +6,14 @@
  **/
 
 class hitslink_admin {
-	/**
+    /**
+     * hitslink_admin()
+     */
+    function hitslink_admin() {
+        add_action('settings_page_hitslink', array($this, 'save_options'), 0);
+    } #hitslink_admin()
+
+    /**
 	 * save_options()
 	 *
 	 * @return void
@@ -60,7 +67,7 @@ class hitslink_admin {
 	 * @return void
 	 **/
 
-	function edit_options() {
+	static function edit_options() {
 		$script = hitslink::get_options();
 		
 		if ( !$script ) {
@@ -129,5 +136,6 @@ EOS;
 	} # edit_options()
 } # hitslink_admin
 
-add_action('settings_page_hitslink', array('hitslink_admin', 'save_options'), 0);
+$hitslink_admin = new hitslink_admin();
+
 ?>
