@@ -3,20 +3,19 @@
 Plugin Name: HitsLink
 Plugin URI: http://www.semiologic.com/software/hitslink/
 Description: Adds <a href="http://go.semiologic.com/hitslink">HitsLink</a> tracking to your site.
-Version: 2.1
+Version: 2.1.1
 Author: Denis de Bernardy, Mike_Koepke
 Author URI: http://www.getsemiologic.com
 Text Domain: hitslink
 Domain Path: /lang
+License: Dual licensed under the MIT and GPLv2 licenses
 */
 
 /*
 Terms of use
 ------------
 
-This software is copyright Mesoconcepts (http://www.mesoconcepts.com), and is distributed under the terms of the GPL license, v.2.
-
-http://www.opensource.org/licenses/gpl-2.0.php
+This software is copyright Denis de Bernardy & Mike Koepke, and is distributed under the terms of the MIT and GPLv2 licenses.
 **/
 
 
@@ -34,7 +33,7 @@ class hitslink {
      * hitslink()
      *
      */
-    function hitslink() {
+	public function __construct() {
         add_action('wp_head', array($this, 'header_scripts'), 9);
         add_action('admin_menu', array($this, 'admin_menu'));
 
@@ -111,5 +110,3 @@ function hitslink_admin() {
 }
 
 add_action('load-settings_page_hitslink', 'hitslink_admin');
-
-?>

@@ -3,11 +3,10 @@ Contributors: Denis-de-Bernardy, Mike_Koepke
 Donate link: http://www.semiologic.com/partners/
 Tags: hitslink, stats, semiologic
 Requires at least: 2.8
-Tested up to: 3.6
+Tested up to: 3.8
 Stable tag: trunk
 
-Automatically enables thickbox on thumbnail images (i.e. opens the images in a fancy pop-up).
-
+Perform HitsLink tracking for your site.
 
 == Description ==
 
@@ -47,6 +46,10 @@ It could be argued that Google knows your stats anyway if you're delivering AdSe
 
 
 == Change Log ==
+
+= 2.1.1 =
+
+- WP 3.8 compat
 
 = 2.1 =
 

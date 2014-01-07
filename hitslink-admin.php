@@ -9,7 +9,7 @@ class hitslink_admin {
     /**
      * hitslink_admin()
      */
-    function hitslink_admin() {
+	public function __construct() {
         add_action('settings_page_hitslink', array($this, 'save_options'), 0);
     } #hitslink_admin()
 
@@ -101,9 +101,7 @@ EOS;
 		echo '<form method="post" action="">' . "\n";
 		
 		wp_nonce_field('hitslink');
-		
-		screen_icon();
-		
+
 		echo '<h2>' . __('HitsLink Options', 'hitslink') . '</h2>' . "\n";
 		
 		echo '<table class="form-table">' . "\n"
@@ -137,5 +135,3 @@ EOS;
 } # hitslink_admin
 
 $hitslink_admin = new hitslink_admin();
-
-?>
